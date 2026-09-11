@@ -3,7 +3,7 @@ export const TRIP_INFO = {
   title: "Guangzhou 5-Day Explorer",
   subtitle: "Lingnan Culture, Culinary Wonders & Modern Architecture",
   dates: "Jan 13 – Jan 17, 2026",
-  baseHotel: "Hotel Kspace (Beijing Road)",
+  baseHotel: "CityNote Hotel (Beijing Road)",
   baseCoords: [23.1261, 113.2638],
   baseMetro: "Beijing Rd Station (Line 6)"
 };
@@ -79,8 +79,8 @@ export const METRO_LINES = [
 
 export const LOCATIONS = [
   {
-    id: 'loc-kspace',
-    name: 'Beijing Road (Hotel Kspace)',
+    id: 'loc-citynote',
+    name: 'Beijing Road (CityNote Hotel)',
     coords: [23.1261, 113.2638],
     metro: 'Beijing Rd Station (Line 6)',
     district: 'Yuexiu District',
@@ -248,11 +248,21 @@ export const DAYS_DATA = [
       {
         id: 'd1-1',
         time: '19:30',
-        title: 'Check in at Kspace',
+        title: 'Check in at CityNote Hotel',
         notes: 'Freshen up at hotel',
         category: 'Hotel',
-        locationId: 'loc-kspace',
-        coords: [23.1261, 113.2638]
+        locationId: 'loc-citynote',
+        coords: [23.1261, 113.2638],
+        transit: {
+          toNext: 'Beijing Road – Dinner',
+          recommended: 'walk',
+          duration: '1–2 mins',
+          distance: '50m',
+          summary: 'Walk 1–2 mins (~50m) directly on Beijing Road Pedestrian Street',
+          options: [
+            { mode: 'walk', label: 'Walk 1–2 min (~50m)', detail: 'CityNote Hotel is right on Beijing Road Pedestrian Street. Walk down to food spots.', recommended: true }
+          ]
+        }
       },
       {
         id: 'd1-2',
@@ -260,8 +270,18 @@ export const DAYS_DATA = [
         title: 'Beijing Road – Dinner',
         notes: 'Min Ji (claypot rice) or Yongji (congee)',
         category: 'Food',
-        locationId: 'loc-kspace',
-        coords: [23.1261, 113.2638]
+        locationId: 'loc-citynote',
+        coords: [23.1261, 113.2638],
+        transit: {
+          toNext: 'Dafo Temple',
+          recommended: 'walk',
+          duration: '3 mins',
+          distance: '250m',
+          summary: 'Walk 3 mins (~250m) south along Beijing Road',
+          options: [
+            { mode: 'walk', label: 'Walk 3 min (~250m)', detail: 'Head south on Beijing Rd pedestrian street; Dafo Temple entrance is right on Huixin West St.', recommended: true }
+          ]
+        }
       },
       {
         id: 'd1-3',
@@ -270,7 +290,18 @@ export const DAYS_DATA = [
         notes: '3-min walk from Beijing Rd, dazzling night illumination, free entry',
         category: 'Culture',
         locationId: 'loc-dafo',
-        coords: [23.1267, 113.2646]
+        coords: [23.1267, 113.2646],
+        transit: {
+          toNext: 'Pearl River Walk (Tianzi Pier)',
+          recommended: 'walk',
+          duration: '8–10 mins',
+          distance: '700m',
+          summary: 'Walk 8–10 mins (~700m) south down Beijing Road to Pearl River',
+          options: [
+            { mode: 'walk', label: 'Walk 8–10 min (~700m)', detail: 'Walk straight south down Beijing Rd to Yanjiang Middle Rd at Pearl Riverfront.', recommended: true },
+            { mode: 'didi', label: 'DiDi Taxi (~5 min)', detail: 'Short taxi ride south to Tianzi Pier (~¥12–15).' }
+          ]
+        }
       },
       {
         id: 'd1-4',
@@ -279,7 +310,18 @@ export const DAYS_DATA = [
         notes: '8-min walk to river bank for a refreshing night stroll',
         category: 'Sightseeing',
         locationId: 'loc-cruise',
-        coords: [23.1172, 113.2615]
+        coords: [23.1172, 113.2615],
+        transit: {
+          toNext: 'Back to CityNote Hotel',
+          recommended: 'walk',
+          duration: '8–10 mins',
+          distance: '700m',
+          summary: 'Walk 8–10 mins (~700m) north back up Beijing Road to hotel',
+          options: [
+            { mode: 'walk', label: 'Walk 8–10 min (~700m)', detail: 'Walk straight north up Beijing Road Pedestrian Street back to CityNote Hotel.', recommended: true },
+            { mode: 'didi', label: 'DiDi Taxi (~5 min)', detail: 'Direct taxi to Beijing Rd hotel area (~¥12).' }
+          ]
+        }
       }
     ]
   },
@@ -298,7 +340,26 @@ export const DAYS_DATA = [
         category: 'Culture',
         bookingAlert: 'Requires WeChat Reservation',
         locationId: 'loc-chen-clan',
-        coords: [23.1275, 113.2362]
+        coords: [23.1275, 113.2362],
+        startTransitFromHotel: {
+          summary: 'Metro Line 6 → 1 (~15 mins) OR DiDi Taxi (~15 mins)',
+          options: [
+            { mode: 'metro', label: 'Metro Line 6 → Line 1 (~15 min)', detail: 'Beijing Rd (Line 6) → Gongyuanqian, transfer Line 1 to Chen Clan Academy Station Exit D (¥3)', recommended: true },
+            { mode: 'didi', label: 'DiDi Taxi (~15–20 min)', detail: 'Direct taxi ride from Beijing Rd (~4.5 km, ~¥18–22)' }
+          ]
+        },
+        transit: {
+          toNext: 'Lunch – Baohua Road',
+          recommended: 'walk',
+          duration: '12 mins',
+          distance: '900m',
+          summary: 'Walk 12 mins (~900m) south down Baohua Rd OR Metro 1 stop',
+          options: [
+            { mode: 'walk', label: 'Walk 12 min (~900m)', detail: 'Stroll south along Baohua Rd passing classic Xiguan architecture.', recommended: true },
+            { mode: 'metro', label: 'Metro Line 1 (5 min)', detail: 'Chen Clan Academy Station → Changshou Rd Station Exit D (1 stop, ¥2).' },
+            { mode: 'didi', label: 'DiDi Taxi (~6 min)', detail: 'Short ride south to Baohua Rd (~¥13).' }
+          ]
+        }
       },
       {
         id: 'd2-2',
@@ -307,7 +368,17 @@ export const DAYS_DATA = [
         notes: 'Famous Chen Tianji crispy fish skin & Cantonese snacks',
         category: 'Food',
         locationId: 'loc-yongqing-fang',
-        coords: [23.1161, 113.2346]
+        coords: [23.1161, 113.2346],
+        transit: {
+          toNext: 'Yongqing Fang + Enning Road',
+          recommended: 'walk',
+          duration: '5–8 mins',
+          distance: '500m',
+          summary: 'Walk 5–8 mins (~500m) south down Baohua Rd into Enning Rd',
+          options: [
+            { mode: 'walk', label: 'Walk 5–8 min (~500m)', detail: 'Continue south on Baohua Rd directly entering historic Enning Rd & Yongqing Fang.', recommended: true }
+          ]
+        }
       },
       {
         id: 'd2-3',
@@ -316,7 +387,18 @@ export const DAYS_DATA = [
         notes: 'Historic Qilou arcade streets, Cantonese opera museum & Bruce Lee house',
         category: 'Sightseeing',
         locationId: 'loc-yongqing-fang',
-        coords: [23.1161, 113.2346]
+        coords: [23.1161, 113.2346],
+        transit: {
+          toNext: 'Shamian Island',
+          recommended: 'walk',
+          duration: '10–12 mins',
+          distance: '800m',
+          summary: 'Walk 10–12 mins (~800m) south across pedestrian overpass into Shamian',
+          options: [
+            { mode: 'walk', label: 'Walk 10–12 min (~800m)', detail: 'Walk south down Enning Rd, cross Liuersan Rd pedestrian overpass into Shamian Island.', recommended: true },
+            { mode: 'didi', label: 'DiDi Taxi (~5 min)', detail: 'Quick ride over to Shamian North Ave (~¥12–15).' }
+          ]
+        }
       },
       {
         id: 'd2-4',
@@ -325,7 +407,17 @@ export const DAYS_DATA = [
         notes: 'Colonial villas, shaded European avenues, ideal photo spots',
         category: 'Sightseeing',
         locationId: 'loc-shamian',
-        coords: [23.1099, 113.2368]
+        coords: [23.1099, 113.2368],
+        transit: {
+          toNext: 'Dinner near Shamian',
+          recommended: 'walk',
+          duration: '3–5 mins',
+          distance: '300m',
+          summary: 'Walk 3–5 mins (~300m) inside Shamian or Huangsha area',
+          options: [
+            { mode: 'walk', label: 'Walk 3–5 min (~300m)', detail: 'Walk towards Huangsha Station / Shamian North Ave eateries.', recommended: true }
+          ]
+        }
       },
       {
         id: 'd2-5',
@@ -334,7 +426,18 @@ export const DAYS_DATA = [
         notes: 'Light meal or tea restaurant near Huangsha',
         category: 'Food',
         locationId: 'loc-shamian',
-        coords: [23.1099, 113.2368]
+        coords: [23.1099, 113.2368],
+        transit: {
+          toNext: 'Pearl River Night Cruise (Tianzi Pier)',
+          recommended: 'metro',
+          duration: '20 mins',
+          distance: '4.8 km',
+          summary: 'Metro Line 1 → 2 (~20 mins) OR DiDi (~15 mins along riverfront)',
+          options: [
+            { mode: 'metro', label: 'Metro Line 1 → Line 2 (~20 min)', detail: 'Huangsha Station (Line 1) → Gongyuanqian, transfer Line 2 to Haizhu Sq Exit A + 5 min walk (¥3).', recommended: true },
+            { mode: 'didi', label: 'DiDi Taxi (~15 min)', detail: 'Scenic taxi ride along Yanjiang Rd riverfront (~4.8 km, ~¥20–25).' }
+          ]
+        }
       },
       {
         id: 'd2-6',
@@ -343,15 +446,26 @@ export const DAYS_DATA = [
         notes: 'Tianzi Pier boarding. Tickets 80–150 RMB. Illuminated bridges & Canton Tower',
         category: 'Sightseeing',
         locationId: 'loc-cruise',
-        coords: [23.1172, 113.2615]
+        coords: [23.1172, 113.2615],
+        transit: {
+          toNext: 'Back to CityNote Hotel',
+          recommended: 'walk',
+          duration: '8–10 mins',
+          distance: '700m',
+          summary: 'Walk 8–10 mins (~700m) north up Beijing Road to hotel',
+          options: [
+            { mode: 'walk', label: 'Walk 8–10 min (~700m)', detail: 'Walk straight north up Beijing Road Pedestrian Street back to CityNote Hotel.', recommended: true },
+            { mode: 'didi', label: 'DiDi Taxi (~5 min)', detail: 'Direct taxi to Beijing Rd hotel area (~¥12).' }
+          ]
+        }
       },
       {
         id: 'd2-7',
         time: '22:00',
-        title: 'Back to Kspace',
+        title: 'Back to CityNote Hotel',
         notes: 'Short walk or quick taxi back to Beijing Road',
         category: 'Transport',
-        locationId: 'loc-kspace',
+        locationId: 'loc-citynote',
         coords: [23.1261, 113.2638]
       }
     ]
@@ -371,7 +485,24 @@ export const DAYS_DATA = [
         category: 'Culture',
         bookingAlert: 'Book 3–7 Days Ahead on WeChat',
         locationId: 'loc-museum',
-        coords: [23.1175, 113.3211]
+        coords: [23.1175, 113.3211],
+        startTransitFromHotel: {
+          summary: 'Metro Line 6 → APM (~25 mins) OR DiDi Taxi (~20 mins)',
+          options: [
+            { mode: 'metro', label: 'Metro Line 6 → APM Line (~25 min)', detail: 'Beijing Rd (Line 6) → Haizhu Sq / Yide Rd, APM Line to Opera House Station Exit B (¥4)', recommended: true },
+            { mode: 'didi', label: 'DiDi Taxi (~20 min)', detail: 'Taxi ride to Zhujiang New Town (~9 km, ~¥28–35)' }
+          ]
+        },
+        transit: {
+          toNext: 'Lunch – Huacheng Square',
+          recommended: 'walk',
+          duration: '3–5 mins',
+          distance: '300m',
+          summary: 'Walk 3–5 mins (~300m) west into Mall of the World underground food court',
+          options: [
+            { mode: 'walk', label: 'Walk 3–5 min (~300m)', detail: 'Cross into Mall of the World underground complex at Huacheng Square.', recommended: true }
+          ]
+        }
       },
       {
         id: 'd3-2',
@@ -380,7 +511,17 @@ export const DAYS_DATA = [
         notes: 'Underground food court at Mall of the World / Huacheng Square',
         category: 'Food',
         locationId: 'loc-huacheng',
-        coords: [23.1199, 113.3193]
+        coords: [23.1199, 113.3193],
+        transit: {
+          toNext: 'Huacheng Square Stroll',
+          recommended: 'walk',
+          duration: '2 mins',
+          distance: '100m',
+          summary: 'Walk 2 mins outside onto central park plaza',
+          options: [
+            { mode: 'walk', label: 'Walk 2 min', detail: 'Step outside onto Huacheng Square central lawn park.', recommended: true }
+          ]
+        }
       },
       {
         id: 'd3-3',
@@ -389,7 +530,17 @@ export const DAYS_DATA = [
         notes: 'Spacious central park with skyscraper views (CTF Finance Centre, IFC)',
         category: 'Sightseeing',
         locationId: 'loc-huacheng',
-        coords: [23.1199, 113.3193]
+        coords: [23.1199, 113.3193],
+        transit: {
+          toNext: 'Haixin Bridge',
+          recommended: 'walk',
+          duration: '8–10 mins',
+          distance: '600m',
+          summary: 'Walk 8–10 mins (~600m) south along central plaza to riverfront',
+          options: [
+            { mode: 'walk', label: 'Walk 8–10 min (~600m)', detail: 'Walk south through Huacheng Square straight to north entrance of Haixin Bridge.', recommended: true }
+          ]
+        }
       },
       {
         id: 'd3-4',
@@ -398,7 +549,17 @@ export const DAYS_DATA = [
         notes: 'Pedestrian bridge crossing Pearl River, spectacular skyline photos',
         category: 'Sightseeing',
         locationId: 'loc-haixin',
-        coords: [23.1109, 113.3143]
+        coords: [23.1109, 113.3143],
+        transit: {
+          toNext: 'Canton Tower',
+          recommended: 'walk',
+          duration: '3–5 mins',
+          distance: '300m',
+          summary: 'Walk 3–5 mins (~300m) upon crossing Haixin Bridge to Canton Tower',
+          options: [
+            { mode: 'walk', label: 'Walk 3–5 min (~300m)', detail: 'Exit south end of bridge directly onto Canton Tower plaza.', recommended: true }
+          ]
+        }
       },
       {
         id: 'd3-5',
@@ -407,7 +568,18 @@ export const DAYS_DATA = [
         notes: 'Explore base plaza or buy optional ticket up to 433m deck',
         category: 'Sightseeing',
         locationId: 'loc-canton-tower',
-        coords: [23.1055, 113.3195]
+        coords: [23.1055, 113.3195],
+        transit: {
+          toNext: 'Guangzhou Opera House',
+          recommended: 'apm',
+          duration: '3–5 mins',
+          distance: '1.2 km',
+          summary: 'APM Line 1 stop (3 mins) OR Walk back over bridge (10 mins)',
+          options: [
+            { mode: 'apm', label: 'APM Line (~3 min)', detail: 'Canton Tower Station → Opera House Station (1 stop, ¥2).', recommended: true },
+            { mode: 'walk', label: 'Walk 10–12 min (~1.2 km)', detail: 'Cross back over Haixin Bridge to north bank Opera House.' }
+          ]
+        }
       },
       {
         id: 'd3-6',
@@ -416,7 +588,18 @@ export const DAYS_DATA = [
         notes: 'Architectural masterpiece by Zaha Hadid (Exterior photos)',
         category: 'Sightseeing',
         locationId: 'loc-opera',
-        coords: [23.1205, 113.3183]
+        coords: [23.1205, 113.3183],
+        transit: {
+          toNext: 'Dinner – Tao Tao Ju (Beijing Rd)',
+          recommended: 'metro',
+          duration: '25 mins',
+          distance: '8.5 km',
+          summary: 'Metro APM → Line 3/5/6 (~25 mins) OR DiDi Taxi (~20 mins)',
+          options: [
+            { mode: 'metro', label: 'Metro (~25 min)', detail: 'APM Opera House → Zhujiang New Town → Line 3/5 to Line 6 Beijing Rd (¥4).', recommended: true },
+            { mode: 'didi', label: 'DiDi Taxi (~20 min)', detail: 'Direct taxi from Zhujiang New Town to Beijing Rd (~8.5 km, ~¥25–32).' }
+          ]
+        }
       },
       {
         id: 'd3-7',
@@ -424,7 +607,7 @@ export const DAYS_DATA = [
         title: 'Dinner – Tao Tao Ju (Beijing Rd)',
         notes: 'Famous Cantonese dim sum & legendary BBQ pork buns',
         category: 'Food',
-        locationId: 'loc-kspace',
+        locationId: 'loc-citynote',
         coords: [23.1261, 113.2638]
       }
     ]
@@ -443,7 +626,24 @@ export const DAYS_DATA = [
         notes: 'Five Rams Statue, Ming Dynasty city wall & Zhenhai Tower',
         category: 'Sightseeing',
         locationId: 'loc-yuexiu-park',
-        coords: [23.1413, 113.2656]
+        coords: [23.1413, 113.2656],
+        startTransitFromHotel: {
+          summary: 'Metro Line 2 (~12 mins) OR DiDi Taxi (~10 mins)',
+          options: [
+            { mode: 'metro', label: 'Metro Line 2 (~12 min)', detail: 'Walk to Gongyuanqian Station Line 2 → Yuexiu Park Station Exit B1 (2 stops, ¥2)', recommended: true },
+            { mode: 'didi', label: 'DiDi Taxi (~10 min)', detail: 'Quick taxi north to Yuexiu Park Main Gate (~3.2 km, ~¥15–18)' }
+          ]
+        },
+        transit: {
+          toNext: 'Sun Yat-sen Memorial Hall',
+          recommended: 'walk',
+          duration: '5–8 mins',
+          distance: '500m',
+          summary: 'Walk 5–8 mins (~500m) south from Yuexiu Park South Gate',
+          options: [
+            { mode: 'walk', label: 'Walk 5–8 min (~500m)', detail: 'Exit Park South Gate, cross Dongfeng Middle Rd overpass to Memorial Hall.', recommended: true }
+          ]
+        }
       },
       {
         id: 'd4-2',
@@ -452,7 +652,17 @@ export const DAYS_DATA = [
         notes: 'Iconic octagonal blue-tiled dome, 300-year-old silk cotton tree',
         category: 'Culture',
         locationId: 'loc-sun-yatsen',
-        coords: [23.1352, 113.2659]
+        coords: [23.1352, 113.2659],
+        transit: {
+          toNext: 'Lunch near Memorial Hall',
+          recommended: 'walk',
+          duration: '3–5 mins',
+          distance: '300m',
+          summary: 'Walk 3–5 mins (~300m) around Memorial Hall area',
+          options: [
+            { mode: 'walk', label: 'Walk 3–5 min (~300m)', detail: 'Walk to nearby Cantonese roast eateries along Dongfeng / Zhongshan Rd.', recommended: true }
+          ]
+        }
       },
       {
         id: 'd4-3',
@@ -461,7 +671,17 @@ export const DAYS_DATA = [
         notes: 'Local Cantonese roast meat eatery near Memorial Hall Station',
         category: 'Food',
         locationId: 'loc-sun-yatsen',
-        coords: [23.1352, 113.2659]
+        coords: [23.1352, 113.2659],
+        transit: {
+          toNext: 'Temple of the Six Banyans',
+          recommended: 'walk',
+          duration: '8–10 mins',
+          distance: '600m',
+          summary: 'Walk 8–10 mins (~600m) south down Liurong Road',
+          options: [
+            { mode: 'walk', label: 'Walk 8–10 min (~600m)', detail: 'Walk south down tree-lined Liurong Rd to Six Banyans Temple.', recommended: true }
+          ]
+        }
       },
       {
         id: 'd4-4',
@@ -470,16 +690,38 @@ export const DAYS_DATA = [
         notes: 'Ancient Buddhist temple & 57m colorful Flower Pagoda',
         category: 'Culture',
         locationId: 'loc-six-banyans',
-        coords: [23.1317, 113.2656]
+        coords: [23.1317, 113.2656],
+        transit: {
+          toNext: 'Back to CityNote – Rest',
+          recommended: 'walk',
+          duration: '12–15 mins',
+          distance: '1 km',
+          summary: 'Walk 12–15 mins (~1 km) east along Zhongshan 5th Rd OR Metro 1 stop',
+          options: [
+            { mode: 'walk', label: 'Walk 12–15 min (1 km)', detail: 'Stroll east along Zhongshan 5th Rd directly into Beijing Rd.', recommended: true },
+            { mode: 'metro', label: 'Metro Line 1 → 6 (~8 min)', detail: 'Gongyuanqian Station → Beijing Rd Station (1 stop, ¥2).' },
+            { mode: 'didi', label: 'DiDi Taxi (~5 min)', detail: 'Quick taxi back to Beijing Rd hotel (~¥12).' }
+          ]
+        }
       },
       {
         id: 'd4-5',
         time: '16:30',
-        title: 'Back to Kspace – Rest',
+        title: 'Back to CityNote – Rest',
         notes: 'Mid-afternoon chill & rest at hotel',
         category: 'Rest',
-        locationId: 'loc-kspace',
-        coords: [23.1261, 113.2638]
+        locationId: 'loc-citynote',
+        coords: [23.1261, 113.2638],
+        transit: {
+          toNext: 'Wenming Road Food Crawl',
+          recommended: 'walk',
+          duration: '5–8 mins',
+          distance: '500m',
+          summary: 'Walk 5–8 mins (~500m) east from Beijing Road to Wenming Road',
+          options: [
+            { mode: 'walk', label: 'Walk 5–8 min (~500m)', detail: 'Walk east along Wenming Rd to Baihua Desserts & Dayang Coconut Soup.', recommended: true }
+          ]
+        }
       },
       {
         id: 'd4-6',
@@ -503,10 +745,21 @@ export const DAYS_DATA = [
         id: 'd5-1',
         time: '09:30',
         title: 'Check out – Store Luggage',
-        notes: 'Store luggage at Hotel Kspace reception',
+        notes: 'Store luggage at CityNote Hotel reception',
         category: 'Hotel',
-        locationId: 'loc-kspace',
-        coords: [23.1261, 113.2638]
+        locationId: 'loc-citynote',
+        coords: [23.1261, 113.2638],
+        transit: {
+          toNext: 'Metro to Tianhe District',
+          recommended: 'metro',
+          duration: '25 mins',
+          distance: '8.5 km',
+          summary: 'Metro Line 6 → Line 3/1 (~25 mins) OR DiDi Taxi (~25 mins)',
+          options: [
+            { mode: 'metro', label: 'Metro Line 6 → 3 (~25 min)', detail: 'Beijing Rd (Line 6) → Dongshankou/Yanjiang, Line 3/1 to Tiyu Xilu or Shipaiqiao (¥4)', recommended: true },
+            { mode: 'didi', label: 'DiDi Taxi (~25 min)', detail: 'Direct taxi to Taikoo Hui / Grandview Mall (~8.5 km, ~¥28–35)' }
+          ]
+        }
       },
       {
         id: 'd5-2',
@@ -515,7 +768,17 @@ export const DAYS_DATA = [
         notes: 'Line 6 → Line 3 or 1 (~25 min journey)',
         category: 'Transport',
         locationId: 'loc-taikoo-hui',
-        coords: [23.1245, 113.3231]
+        coords: [23.1245, 113.3231],
+        transit: {
+          toNext: 'Taikoo Hui or Grandview Mall',
+          recommended: 'walk',
+          duration: '2 mins',
+          distance: '100m',
+          summary: 'Walk 2 mins directly from metro exit into mall',
+          options: [
+            { mode: 'walk', label: 'Walk 2 min', detail: 'Direct underground exit into Taikoo Hui or Grandview Mall.', recommended: true }
+          ]
+        }
       },
       {
         id: 'd5-3',
@@ -524,7 +787,17 @@ export const DAYS_DATA = [
         notes: 'Souvenir shopping, tea, lifestyle shops & pastry bakeries',
         category: 'Shopping',
         locationId: 'loc-grandview',
-        coords: [23.1261, 113.3253]
+        coords: [23.1261, 113.3253],
+        transit: {
+          toNext: 'Lunch at Mall',
+          recommended: 'walk',
+          duration: '2 mins',
+          distance: '100m',
+          summary: 'Walk 2 mins inside mall complex',
+          options: [
+            { mode: 'walk', label: 'Walk 2 min', detail: 'Walk within Grandview Mall / Taikoo Hui dining concourse.', recommended: true }
+          ]
+        }
       },
       {
         id: 'd5-4',
@@ -533,16 +806,38 @@ export const DAYS_DATA = [
         notes: 'Food court or restaurant inside Grandview / Taikoo Hui',
         category: 'Food',
         locationId: 'loc-grandview',
-        coords: [23.1261, 113.3253]
+        coords: [23.1261, 113.3253],
+        transit: {
+          toNext: 'Back to CityNote – Pick up luggage',
+          recommended: 'metro',
+          duration: '25 mins',
+          distance: '8.5 km',
+          summary: 'Metro Line 1/3 → Line 6 (~25 mins) OR DiDi Taxi (~25 mins)',
+          options: [
+            { mode: 'metro', label: 'Metro Line 1/3 → Line 6 (~25 min)', detail: 'Tiyu Xilu / Shipaiqiao → Beijing Rd Station (¥4).', recommended: true },
+            { mode: 'didi', label: 'DiDi Taxi (~25 min)', detail: 'Taxi back to Beijing Rd hotel (~8.5 km, ~¥28–35).' }
+          ]
+        }
       },
       {
         id: 'd5-5',
         time: '14:00',
-        title: 'Back to Kspace – Pick up luggage',
+        title: 'Back to CityNote – Pick up luggage',
         notes: 'Metro back to Beijing Rd & retrieve bags from hotel',
         category: 'Hotel',
-        locationId: 'loc-kspace',
-        coords: [23.1261, 113.2638]
+        locationId: 'loc-citynote',
+        coords: [23.1261, 113.2638],
+        transit: {
+          toNext: 'Metro to Airport North (T2)',
+          recommended: 'metro',
+          duration: '50–55 mins',
+          distance: '38 km',
+          summary: 'Metro Line 6 → 2 → 3 North (~55 mins, ¥7) OR DiDi Taxi (~50 mins, ~¥110)',
+          options: [
+            { mode: 'metro', label: 'Metro Line 6 → 2 → 3 North (~55 min)', detail: 'Beijing Rd (Line 6) → Gongyuanqian (Line 2) → Jiahewanggang (Line 3 North) to Airport North T2 (¥7, fast & avoids highway traffic!)', recommended: true },
+            { mode: 'didi', label: 'DiDi Taxi (~45–50 min)', detail: 'Direct highway taxi from Beijing Rd to Baiyun Airport Terminal 2 (~38 km, ~¥100–130).' }
+          ]
+        }
       },
       {
         id: 'd5-6',

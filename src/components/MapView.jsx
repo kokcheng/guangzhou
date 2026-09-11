@@ -40,7 +40,7 @@ const createCustomIcon = (location, dayColor = '#0d9488', isSelected = false) =>
 
 export default function MapView({ activeDay, selectedLocation, onSelectLocation }) {
   // Center coords based on selection or Guangzhou default
-  const defaultCenter = [23.1261, 113.2638]; // Hotel Kspace / Beijing Road
+  const defaultCenter = [23.1261, 113.2638]; // CityNote Hotel / Beijing Road
   const currentCenter = selectedLocation ? selectedLocation.coords : defaultCenter;
 
   // Filter locations to display on map based on active day

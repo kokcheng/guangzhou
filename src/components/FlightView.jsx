@@ -180,7 +180,7 @@ export default function FlightView() {
               <span>Return Flight Departure Tip</span>
             </div>
             <p className="text-slate-300 leading-relaxed">
-              For return flight <strong>CZ351 (18:50)</strong>, plan to leave Beijing Road / Hotel Kspace by <strong>15:30</strong> to comfortably arrive at Terminal 2 for check-in and security.
+              For return flight <strong>CZ351 (18:50)</strong>, plan to leave Beijing Road / CityNote Hotel by <strong>15:30</strong> to comfortably arrive at Terminal 2 for check-in and security.
             </p>
           </div>
 

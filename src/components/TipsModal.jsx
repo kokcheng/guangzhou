@@ -89,10 +89,10 @@ export default function TipsModal({ isOpen, onClose }) {
               <span>Day 5 Airport Route (CZ351 Flight)</span>
             </div>
             <p className="text-slate-300 mb-2">
-              Leave Hotel Kspace by <strong className="text-white">15:30</strong> for your 18:50 flight:
+              Leave CityNote Hotel by <strong className="text-white">15:30</strong> for your 18:50 flight:
             </p>
-            <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-xs font-mono text-slate-300">
-              Hotel Kspace ➔ Walk to Beijing Rd Metro ➔ Line 6 to Gongyuanqian ➔ Line 3 North to Airport North Station (Terminal 2) (~55 min, ~8 RMB)
+            <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800 font-mono text-[11px] text-slate-300">
+              CityNote Hotel ➔ Walk to Beijing Rd Metro ➔ Line 6 to Gongyuanqian ➔ Line 3 North to Airport North Station (Terminal 2) (~55 min, ~8 RMB)
             </div>
           </div>
 
