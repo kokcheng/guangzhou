@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, MapPin, Calendar, CheckCircle2, Map, List, Train, Info, Sparkles, X } from 'lucide-react';
+import { Search, MapPin, Calendar, CheckCircle2, Map, List, Train, Info, Sparkles, X, Plane } from 'lucide-react';
 import { TRIP_INFO } from '../data/tripData';
 
 export default function Header({ 
@@ -100,7 +100,7 @@ export default function Header({
           </div>
 
           {/* Desktop Navigation Tabs */}
-          <div className="hidden md:flex items-center bg-slate-800/80 p-1 rounded-xl border border-slate-700/50 text-xs font-semibold">
+          <div className="hidden md:flex items-center bg-slate-800/80 p-1 rounded-xl border border-slate-700/50 text-xs font-semibold space-x-1">
             <button
               onClick={() => setActiveTab('timeline')}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition ${
@@ -123,6 +123,18 @@ export default function Header({
             >
               <Map className="w-3.5 h-3.5" />
               Interactive Map
+            </button>
+
+            <button
+              onClick={() => setActiveTab('flight')}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition ${
+                activeTab === 'flight'
+                  ? 'bg-teal-500 text-white shadow-sm'
+                  : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/50'
+              }`}
+            >
+              <Plane className="w-3.5 h-3.5" />
+              Flights
             </button>
 
             <button

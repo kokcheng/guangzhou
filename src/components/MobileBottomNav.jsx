@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Map, Train, Sparkles } from 'lucide-react';
+import { List, Map, Train, Sparkles, Plane } from 'lucide-react';
 
 export default function MobileBottomNav({ activeTab, setActiveTab, onOpenTips }) {
   return (
@@ -8,7 +8,7 @@ export default function MobileBottomNav({ activeTab, setActiveTab, onOpenTips })
         
         <button
           onClick={() => setActiveTab('timeline')}
-          className={`flex flex-col items-center gap-0.5 py-1 px-3 rounded-xl transition ${
+          className={`flex flex-col items-center gap-0.5 py-1 px-2.5 rounded-xl transition ${
             activeTab === 'timeline'
               ? 'text-teal-400 font-bold'
               : 'text-slate-400 hover:text-slate-200'
@@ -20,7 +20,7 @@ export default function MobileBottomNav({ activeTab, setActiveTab, onOpenTips })
 
         <button
           onClick={() => setActiveTab('map')}
-          className={`flex flex-col items-center gap-0.5 py-1 px-3 rounded-xl transition ${
+          className={`flex flex-col items-center gap-0.5 py-1 px-2.5 rounded-xl transition ${
             activeTab === 'map'
               ? 'text-teal-400 font-bold'
               : 'text-slate-400 hover:text-slate-200'
@@ -31,8 +31,20 @@ export default function MobileBottomNav({ activeTab, setActiveTab, onOpenTips })
         </button>
 
         <button
+          onClick={() => setActiveTab('flight')}
+          className={`flex flex-col items-center gap-0.5 py-1 px-2.5 rounded-xl transition ${
+            activeTab === 'flight'
+              ? 'text-teal-400 font-bold'
+              : 'text-slate-400 hover:text-slate-200'
+          }`}
+        >
+          <Plane className="w-5 h-5" />
+          <span className="text-[10px]">Flights</span>
+        </button>
+
+        <button
           onClick={() => setActiveTab('metro')}
-          className={`flex flex-col items-center gap-0.5 py-1 px-3 rounded-xl transition ${
+          className={`flex flex-col items-center gap-0.5 py-1 px-2.5 rounded-xl transition ${
             activeTab === 'metro'
               ? 'text-teal-400 font-bold'
               : 'text-slate-400 hover:text-slate-200'

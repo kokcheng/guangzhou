@@ -8,6 +8,59 @@ export const TRIP_INFO = {
   baseMetro: "Beijing Rd Station (Line 6)"
 };
 
+export const FLIGHT_DATA = [
+  {
+    id: "flight-outbound",
+    type: "Outbound Flight",
+    flightNo: "CZ354",
+    airline: "China Southern Airlines",
+    departure: {
+      city: "Singapore",
+      code: "SIN",
+      airport: "Singapore Changi Airport",
+      date: "Wed, 13 Jan 2027",
+      time: "13:40"
+    },
+    arrival: {
+      city: "Guangzhou",
+      code: "CAN",
+      airport: "Guangzhou Baiyun Int'l Airport (T2)",
+      date: "Wed, 13 Jan 2027",
+      time: "17:40"
+    },
+    duration: "4h 00m",
+    direct: true,
+    terminal: "Terminal 2",
+    badgeColor: "bg-teal-500/10 text-teal-400 border-teal-500/20",
+    iconBg: "from-teal-500 to-emerald-500"
+  },
+  {
+    id: "flight-return",
+    type: "Return Flight",
+    flightNo: "CZ351",
+    airline: "China Southern Airlines",
+    departure: {
+      city: "Guangzhou",
+      code: "CAN",
+      airport: "Guangzhou Baiyun Int'l Airport (T2)",
+      date: "Sun, 17 Jan 2027",
+      time: "18:50"
+    },
+    arrival: {
+      city: "Singapore",
+      code: "SIN",
+      airport: "Singapore Changi Airport",
+      date: "Sun, 17 Jan 2027",
+      time: "23:00"
+    },
+    duration: "4h 10m",
+    direct: true,
+    terminal: "Terminal 2",
+    badgeColor: "bg-purple-500/10 text-purple-400 border-purple-500/20",
+    iconBg: "from-purple-500 to-pink-500"
+  }
+];
+
 export const DISTRICTS = [
   { id: 'yuexiu', name: 'Yuexiu District', color: '#0d9488', desc: 'Historic heart of Guangzhou, heritage sites & local eats' },
   { id: 'liwan', name: 'Liwan District', color: '#e11d48', desc: 'Old Canton, Xiguan mansions, arcade streets & dim sum' },

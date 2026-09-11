@@ -6,6 +6,7 @@ import DayTabs from './components/DayTabs';
 import TimelineView from './components/TimelineView';
 import MapView from './components/MapView';
 import MetroGuide from './components/MetroGuide';
+import FlightView from './components/FlightView';
 import TipsModal from './components/TipsModal';
 import MobileBottomNav from './components/MobileBottomNav';
 
@@ -91,7 +92,7 @@ export default function App() {
       />
 
       {/* Day Selector Tabs (only shown on timeline & map views) */}
-      {activeTab !== 'metro' && (
+      {activeTab !== 'metro' && activeTab !== 'flight' && (
         <DayTabs
           activeDay={activeDay}
           setActiveDay={setActiveDay}
@@ -120,6 +121,11 @@ export default function App() {
             selectedLocation={selectedLocation}
             onSelectLocation={(loc) => setSelectedLocation(loc)}
           />
+        )}
+
+        {/* Flights Schedule */}
+        {activeTab === 'flight' && (
+          <FlightView />
         )}
 
         {/* Metro & District Guide */}
